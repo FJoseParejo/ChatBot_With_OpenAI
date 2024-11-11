@@ -2,10 +2,10 @@ import openai
 import os
 from dotenv import load_dotenv
 
-# Carga las variables del archivo .env mediante dotoenv
+# Load the file's variables .env with dotoenv
 load_dotenv()
 
-# Accedemos a las variables de entorno mediante fichero .env para reforzar la seguridad de los datos 
+# We access the environment variables through an .env file to reinforce data security
 openai.api_key = os.getenv('SECRET_KEY')
 
 def chat_with_openai():
@@ -21,7 +21,7 @@ def chat_with_openai():
             break
 
         try:
-            # Usa ChatCompletion con `gpt-3.5-turbo`
+            # Use ChatCompletion with `gpt-3.5-turbo`
             response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -41,5 +41,5 @@ def chat_with_openai():
         except Exception as e:
             print(f"Error: {e}")
 
-# Inicia el chat
+# Init the Chat
 chat_with_openai()
